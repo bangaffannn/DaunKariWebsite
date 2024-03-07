@@ -6,7 +6,7 @@ export default function Home() {
       <div className="container mx-auto text-white">
         <div>
           <div className="flex justify-start items-center grid grid-cols-2">
-            <h1 className="text-6xl leading-tight font-serif m-5 pt-10">
+            <h1 className="text-4xl md:text-6xl leading-tight font-serif m-5 pt-10">
               BRINGS BACK <span className="font-bold text-primary"> YOUR MEMORIES </span>{" "}
               THROUGH ORIENTAL{" "}
               <span className="font-bold text-primary"> INDONESIAN FOOD. </span>
