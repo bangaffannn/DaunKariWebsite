@@ -23,7 +23,7 @@ function Header() {
         <div
           className={`${
             isMenuOpen
-              ? "fixed md:hidden p-8 top-20 left-0 right-0 bg-primary bg-opacity-80 transition-opacity duration-500 ease-in-out"
+              ? "fixed md:hidden p-8 top-5 left-0 right-0 bg-opacity-80 transition-opacity duration-500 ease-in-out"
               : "hidden md:block md:flex md:justify-center md:items-center space-x-4"
           }`}
         >

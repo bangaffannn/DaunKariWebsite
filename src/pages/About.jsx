@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section className="bg-black">
       <div className="container mx-auto">
-        <div className="flex justify-center mx-10 items-center grid grid-cols-2 gap-x-6">
+        <div className="flex justify-center mx-10 items-center grid md:grid-cols-2 gap-x-6">
           <div>
             <h1 className="text-white text-6xl leading-tight font-serif pt-10">
               Tentang <span className="text-primary font-bold">Kami</span>

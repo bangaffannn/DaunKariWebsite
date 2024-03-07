@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <section className="black p-8">
+    <section className="lg:min-h-screen p-8">
       <div className="container mx-auto text-white">
         <div>
           <div className="flex justify-start items-center grid grid-cols-2">
