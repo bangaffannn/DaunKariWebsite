@@ -11,6 +11,10 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleCloseMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="p-8 text-white bg-black">
       <nav className="container mx-auto flex justify-end md:justify-center items-center">
@@ -20,31 +24,40 @@ function Header() {
         <div
           className={`${
             isMenuOpen
-              ? "fixed md:hidden p-8 top-20 left-0 right-0 bg-black bg-opacity-20 transition-opacity duration-500 ease-in-out"
+              ? "fixed block md:hidden p-8 top-0 left-0 right-0 bg-black bg-opacity-20 transition duration-500 ease-in-out"
               : "hidden md:block md:flex md:justify-center md:items-center space-x-4"
           }`}
         >
           <ul className="flex justify-center items-center gap-x-10 font-serif text-md">
             <li
+              onClick={handleCloseMenu}
               className={`px-4 py-1 rounded-full text-white hover:bg-primary transition-all duration-300 ease-in-out ${
                 location.pathname === "/" ? "bg-primary" : ""
               }`}
             >
-              <Link to="/">Home</Link>
+              <Link onClick={handleCloseMenu} to="/">
+                Home
+              </Link>
             </li>
             <li
+              onClick={handleCloseMenu}
               className={`px-4 py-1 rounded-full text-white hover:bg-primary transition-all duration-300 ease-in-out ${
                 location.pathname === "/about" ? "bg-primary" : ""
               }`}
             >
-              <Link to="/about">About</Link>
+              <Link onClick={handleCloseMenu} to="/about">
+                About
+              </Link>
             </li>
             <li
+              onClick={handleCloseMenu}
               className={`px-4 py-1 rounded-full text-white hover:bg-primary transition-all duration-300 ease-in-out ${
                 location.pathname === "/menu" ? "bg-primary" : ""
               }`}
             >
-              <Link to="/menu">Menu</Link>
+              <Link onClick={handleCloseMenu} to="/menu">
+                Menu
+              </Link>
             </li>
             {/* <li className="px-4 py-1 rounded-full text-white hover:bg-primary transition-all duration-300 ease-in-out">
             <Link to="/contact">Contact</Link>
