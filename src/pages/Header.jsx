@@ -1,17 +1,14 @@
-import React from "react";
-import { useState } from "react";
-
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { RiMenu3Fill } from "react-icons/ri";
 import { AiOutlineClose } from "react-icons/ai";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation(); // Menggunakan useLocation untuk mendapatkan lokasi saat ini
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-  const handleMenuClick = () => {
-    setIsMenuOpen(false);
   };
 
   return (
@@ -23,25 +20,31 @@ function Header() {
         <div
           className={`${
             isMenuOpen
-              ? "fixed md:hidden p-8 top-20 left-0 right-0 bg-opacity-80 transition-opacity duration-500 ease-in-out"
+              ? "fixed md:hidden p-8 top-20 left-0 right-0 bg-black bg-opacity-20 transition-opacity duration-500 ease-in-out"
               : "hidden md:block md:flex md:justify-center md:items-center space-x-4"
           }`}
         >
           <ul className="flex justify-center items-center gap-x-10 font-serif text-md">
-            <li className="px-4 py-1 rounded-full text-white hover:bg-primary transition-all duration-300 ease-in-out">
-              <Link to="/" onClick={handleMenuClick}>
-                Home
-              </Link>
+            <li
+              className={`px-4 py-1 rounded-full text-white hover:bg-primary transition-all duration-300 ease-in-out ${
+                location.pathname === "/" ? "bg-primary" : ""
+              }`}
+            >
+              <Link to="/">Home</Link>
             </li>
-            <li className="px-4 py-1 rounded-full text-white hover:bg-primary transition-all duration-300 ease-in-out">
-              <Link to="/about" onClick={handleMenuClick}>
-                About
-              </Link>
+            <li
+              className={`px-4 py-1 rounded-full text-white hover:bg-primary transition-all duration-300 ease-in-out ${
+                location.pathname === "/about" ? "bg-primary" : ""
+              }`}
+            >
+              <Link to="/about">About</Link>
             </li>
-            <li className="px-4 py-1 rounded-full text-white hover:bg-primary transition-all duration-300 ease-in-out">
-              <Link to="/menu" onClick={handleMenuClick}>
-                Menu
-              </Link>
+            <li
+              className={`px-4 py-1 rounded-full text-white hover:bg-primary transition-all duration-300 ease-in-out ${
+                location.pathname === "/menu" ? "bg-primary" : ""
+              }`}
+            >
+              <Link to="/menu">Menu</Link>
             </li>
             {/* <li className="px-4 py-1 rounded-full text-white hover:bg-primary transition-all duration-300 ease-in-out">
             <Link to="/contact">Contact</Link>
